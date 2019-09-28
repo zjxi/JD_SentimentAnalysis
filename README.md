@@ -27,8 +27,8 @@ $ cd Taobao_SentimentAnalysis
 
 ### 1. 利用snownlp
 
-   找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
-   ![img](C:\Users\lenovo\Desktop\Taobao_SentimentAnalysis\assets\screenshot.png)
+找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
+![img](./assets/screenshot.png)
 
 ### 2. 构建简单分词和词性标注
 
