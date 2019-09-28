@@ -47,7 +47,27 @@ $ cd Taobao_SentimentAnalysis
 ### 4. 修改并重构贝叶斯分类器
 
 - 修改```sentiment.marshal```为合适的路径，并利用贝叶斯分类器进行情感分析测试，
- 测试结果保存到```result.csv```
+  规定将情感分析结果在```[0, 0.4]```范围为不喜欢(差评)，```[0.4, 0.6]```范围为一般(中评), ```[0.6, 1.0]```范围为喜欢(好评)
+  ```python
+   with open(f'{filename}.csv', 'r', encoding='gbk') as fr:
+        for line in fr.readlines():
+            s = snownlp.SnowNLP(line)
+            if s.sentiments > 0.6:
+                res = '喜欢'
+                res_list.append(1)
+            elif s.sentiments < 0.4:
+                res = '不喜欢'
+                res_list.append(-1)
+            else:
+                res = '一般'
+                res_list.append(0)
+            sent_dict = {
+                '情感分析结果': s.sentiments,
+                '评价倾向': res,
+                '商品评论': line
+            }
+  ```
+  最后的测试结果保存到```result.csv```
 
 ## Results | 部分结果展示
 
