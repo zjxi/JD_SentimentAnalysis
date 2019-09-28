@@ -89,9 +89,9 @@ class Spider:
 
                 time.sleep(random.randint(2, 5))
             except Exception as ex:
-                self.to_csv('商品评论数据')
+                self.to_csv('comment_data')
                 print(ex)
-        self.to_csv('商品评论数据')
+        self.to_csv('comment_data')
 
 
 if __name__ == '__main__':
