@@ -22,25 +22,25 @@ $ cd Taobao_SentimentAnalysis
 
 ## Details | 情感分析流程简析
 ### 1. 利用snownlp
-找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
-![img](./assets/screeshot.png)
+   找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
+   ![img](./assets/screeshot.png)
 ### 2. 构建简单分词和词性标注
-部分中文分词如下：
-```
- 新/b 华/m 社/e 北/b 京/e １/b ２/m 月/e ３/b １/m 日/e 电/s 忠/b 诚/e 的/s 共/b 产/m 主/m 义/e 战/b 士/e ，/s 久/b 经/m 考/m 验/e 的/s 无/b 产/m 阶/m 级/e 革/b 命/m 家/e ，/s 我/b 党/e 党/b 务/e 工/b 作/e 和/s 统/b 一/m 战/m 线/e 工/b 作/e 的/s 杰/b 出/e 领/b 导/m 人/e ，/s 原/s 中/b 共/m 中/m 央/e 顾/b 问/e 委/b 员/m 会/e 常/b 务/e 委/b 员/m 会/e 委/b 员/e ，/s 中/b 国/e 人/b 民/e 政/b 治/e 协/b 商/e 会/b 议/e 第/b 四/e 、/s 五/s 、/s 六/s 届/s 全/b 国/e 委/b 员/m 会/e 副/s 主/b 席/e 刘/s 澜/b 涛/e 同/b 志/e ，/s 因/s 病/s 医/b 治/e 无/b 效/e ，/s 于/s １/b ９/m ９/m ７/m 年/e １/b ２/m 月/e ３/b １/m 日/e １/b ０/m 时/e ４/b ４/m 分/e 在/s 北/b 京/e 逝/b 世/e ，/s 终/b 年/e ８/b ８/e 岁/s 。/s
- 根/b 据/e 刘/s 澜/b 涛/e 同/b 志/e 生/b 前/e 遗/b 愿/e 和/s 家/b 属/e 的/s 意/b 见/e ，/s 刘/s 澜/b 涛/e 同/b 志/e 的/s 丧/b 事/e 从/b 简/e ，/s 不/s 举/b 行/e 仪/b 式/e 、/s 不/s 保/b 留/e 骨/b 灰/e 。/s
- 党/b 中/m 央/e 国/b 务/m 院/e 关/b 心/e 西/b 藏/e 雪/b 灾/e 救/b 灾/e 工/b 作/e
- 灾/b 区/e 各/b 级/e 政/b 府/e 全/b 力/e 组/b 织/e 抗/b 灾/e 力/b 争/e 降/b 低/e 灾/b 害/e 损/b 失/e
- 据/s 新/b 华/m 社/e 北/b 京/e １/b ２/m 月/e ３/b ０/m 日/e 电/s 西/b 藏/e 自/b 治/m 区/e 政/b 府/e 副/s 主/b 席/e 泽/b 仁/m 桑/m 珠/e 今/b 天/e 在/s 北/b 京/e 接/b 受/e 记/b 者/e 采/b 访/e 时/s 介/b 绍/e 说/s ，/s 西/b 藏/e 部/b 分/e 地/b 区/e 发/b 生/e 特/b 大/e 雪/b 灾/e 后/s ，/s 党/b 中/m 央/e 、/s 国/b 务/m 院/e 十/b 分/e 关/b 心/e 西/b 藏/e 的/s 灾/b 情/e 和/s 救/b 灾/e 工/b 作/e ，/s 指/b 示/e 全/b 力/e 做/b 好/e 救/b 灾/e 工/b 作/e 。/s 自/b 治/m 区/e 各/b 级/e 政/b 府/e 正/b 在/e 全/b 力/e 组/b 织/e 抗/b 灾/e ，/s 力/b 争/e 降/b 低/e 特/b 大/e 雪/b 灾/e 造/b 成/e 的/s 损/b 失/e 。/s
- 据/s 泽/b 仁/m 桑/m 珠/e 介/b 绍/e ，/s 受/s 厄/b 尔/m 尼/m 诺/e 现/b 象/e 的/s 影/b 响/e ，/s 西/b 藏/e 的/s 唐/b 古/m 拉/m 山/e 、/s 喜/b 马/m 拉/m 雅/m 山/e 一/b 线/e ９/b 月/e 以/b 来/e 提/b 前/e 开/b 始/e 降/b 雪/e ，/s 降/b 雪/e 持/b 续/e 不/s 断/s 。/s １/b ２/m 月/m 份/e ，/s 受/s 南/s 支/b 槽/e 云/b 系/e 和/s 北/b 部/e 冷/b 空/m 气/e 的/s 共/b 同/e 影/b 响/e ，/s 那/b 曲/e 、/s 阿/b 里/e 、/s 日/b 喀/m 则/e 、/s 拉/b 萨/e 、/s 山/b 南/e 以/b 及/e 昌/b 都/e 等/s ６/s 地/s 市/s 都/s 出/b 现/e 了/s 不/b 同/e 的/s 降/b 雪/e 过/b 程/e ，/s 其/b 中/e 一/b 部/m 分/e 地/b 区/e 已/b 经/e 成/s 重/s 灾/s 。/s 那/b 曲/e 地/b 区/e 自/s ９/b 月/e 以/b 来/e 降/b 雪/e 已/s 达/s ４/b ０/e 余/s 次/s ，/s 包/b 括/e ５/s 次/s 强/s 降/b 雪/e ，/s 遭/b 受/e 严/b 重/e 雪/b 灾/e 袭/b 击/e 的/s 有/s 尼/b 玛/m 县/e 、/s 安/b 多/m 县/e 等/s 县/s 、/s ５/b ７/e 个/s 乡/s 。/s １/b ２/m 月/e ９/b 日/e 起/s ，/s 强/s 降/b 雪/e 面/b 积/e 进/b 一/m 步/e 扩/b 大/e 到/s 阿/b 里/e 地/b 区/e 、/s 日/b 喀/m 则/e 地/b 区/e 、/s 山/b 南/e 地/b 区/e 、/s 昌/b 都/e 地/b 区/e 的/s 一/b 些/e 县/s ，/s 有/b 的/e 县/s ２/b ４/e 小/b 时/e 降/b 雪/e ９/b ５/e 毫/b 米/e ，/s 受/b 灾/e 地/b 区/e 扩/b 大/e 到/s ４/b ０/e 个/s 县/s ，/s 是/s 自/s 有/s 现/b 代/e 气/b 象/e 记/b 录/e 以/b 来/e 最/s 重/s 的/s 一/s 次/s 。/s
-```
+    部分中文分词如下：
+    ```
+    新/b 华/m 社/e 北/b 京/e １/b ２/m 月/e ３/b １/m 日/e 电/s 忠/b 诚/e 的/s 共/b 产/m 主/m 义/e 战/b 士/e ，/s 久/b 经/m 考/m 验/e 的/s 无/b 产/m 阶/m 级/e 革/b 命/m 家/e ，/s 我/b 党/e 党/b 务/e 工/b 作/e 和/s 统/b 一/m 战/m 线/e 工/b 作/e 的/s 杰/b 出/e 领/b 导/m 人/e ，/s 原/s 中/b 共/m 中/m 央/e 顾/b 问/e 委/b 员/m 会/e 常/b 务/e 委/b 员/m 会/e 委/b 员/e ，/s 中/b 国/e 人/b 民/e 政/b 治/e 协/b 商/e 会/b 议/e 第/b 四/e 、/s 五/s 、/s 六/s 届/s 全/b 国/e 委/b 员/m 会/e 副/s 主/b 席/e 刘/s 澜/b 涛/e 同/b 志/e ，/s 因/s 病/s 医/b 治/e 无/b 效/e ，/s 于/s １/b ９/m ９/m ７/m 年/e １/b ２/m 月/e ３/b １/m 日/e １/b ０/m 时/e ４/b ４/m 分/e 在/s 北/b 京/e 逝/b 世/e ，/s 终/b 年/e ８/b ８/e 岁/s 。/s
+    根/b 据/e 刘/s 澜/b 涛/e 同/b 志/e 生/b 前/e 遗/b 愿/e 和/s 家/b 属/e 的/s 意/b 见/e ，/s 刘/s 澜/b 涛/e 同/b 志/e 的/s 丧/b 事/e 从/b 简/e ，/s 不/s 举/b 行/e 仪/b 式/e 、/s 不/s 保/b 留/e 骨/b 灰/e 。/s
+    党/b 中/m 央/e 国/b 务/m 院/e 关/b 心/e 西/b 藏/e 雪/b 灾/e 救/b 灾/e 工/b 作/e
+    灾/b 区/e 各/b 级/e 政/b 府/e 全/b 力/e 组/b 织/e 抗/b 灾/e 力/b 争/e 降/b 低/e 灾/b 害/e 损/b 失/e
+    据/s 新/b 华/m 社/e 北/b 京/e １/b ２/m 月/e ３/b ０/m 日/e 电/s 西/b 藏/e 自/b 治/m 区/e 政/b 府/e 副/s 主/b 席/e 泽/b 仁/m 桑/m 珠/e 今/b 天/e 在/s 北/b 京/e 接/b 受/e 记/b 者/e 采/b 访/e 时/s 介/b 绍/e 说/s ，/s 西/b 藏/e 部/b 分/e 地/b 区/e 发/b 生/e 特/b 大/e 雪/b 灾/e 后/s ，/s 党/b 中/m 央/e 、/s 国/b 务/m 院/e 十/b 分/e 关/b 心/e 西/b 藏/e 的/s 灾/b 情/e 和/s 救/b 灾/e 工/b 作/e ，/s 指/b 示/e 全/b 力/e 做/b 好/e 救/b 灾/e 工/b 作/e 。/s 自/b 治/m 区/e 各/b 级/e 政/b 府/e 正/b 在/e 全/b 力/e 组/b 织/e 抗/b 灾/e ，/s 力/b 争/e 降/b 低/e 特/b 大/e 雪/b 灾/e 造/b 成/e 的/s 损/b 失/e 。/s
+    据/s 泽/b 仁/m 桑/m 珠/e 介/b 绍/e ，/s 受/s 厄/b 尔/m 尼/m 诺/e 现/b 象/e 的/s 影/b 响/e ，/s 西/b 藏/e 的/s 唐/b 古/m 拉/m 山/e 、/s 喜/b 马/m 拉/m 雅/m 山/e 一/b 线/e ９/b 月/e 以/b 来/e 提/b 前/e 开/b 始/e 降/b 雪/e ，/s 降/b 雪/e 持/b 续/e 不/s 断/s 。/s １/b ２/m 月/m 份/e ，/s 受/s 南/s 支/b 槽/e 云/b 系/e 和/s 北/b 部/e 冷/b 空/m 气/e 的/s 共/b 同/e 影/b 响/e ，/s 那/b 曲/e 、/s 阿/b 里/e 、/s 日/b 喀/m 则/e 、/s 拉/b 萨/e 、/s 山/b 南/e 以/b 及/e 昌/b 都/e 等/s ６/s 地/s 市/s 都/s 出/b 现/e 了/s 不/b 同/e 的/s 降/b 雪/e 过/b 程/e ，/s 其/b 中/e 一/b 部/m 分/e 地/b 区/e 已/b 经/e 成/s 重/s 灾/s 。/s 那/b 曲/e 地/b 区/e 自/s ９/b 月/e 以/b 来/e 降/b 雪/e 已/s 达/s ４/b ０/e 余/s 次/s ，/s 包/b 括/e ５/s 次/s 强/s 降/b 雪/e ，/s 遭/b 受/e 严/b 重/e 雪/b 灾/e 袭/b 击/e 的/s 有/s 尼/b 玛/m 县/e 、/s 安/b 多/m 县/e 等/s 县/s 、/s ５/b ７/e 个/s 乡/s 。/s １/b ２/m 月/e ９/b 日/e 起/s ，/s 强/s 降/b 雪/e 面/b 积/e 进/b 一/m 步/e 扩/b 大/e 到/s 阿/b 里/e 地/b 区/e 、/s 日/b 喀/m 则/e 地/b 区/e 、/s 山/b 南/e 地/b 区/e 、/s 昌/b 都/e 地/b 区/e 的/s 一/b 些/e 县/s ，/s 有/b 的/e 县/s ２/b ４/e 小/b 时/e 降/b 雪/e ９/b ５/e 毫/b 米/e ，/s 受/b 灾/e 地/b 区/e 扩/b 大/e 到/s ４/b ０/e 个/s 县/s ，/s 是/s 自/s 有/s 现/b 代/e 气/b 象/e 记/b 录/e 以/b 来/e 最/s 重/s 的/s 一/s 次/s 。/s
+    ```
 
 ### 3. 找到```neg.txt```和```pos.txt```分别为负正向情感数据集
-我们团队采用公开电商购物评论数据集，并进行训练，
-训练后的模型自动保存到```sentiment.marshal```
+    我们团队采用公开电商购物评论数据集，并进行训练，
+    训练后的模型自动保存到```sentiment.marshal```
 ### 4. 修改并重构贝叶斯分类器
-修改```sentiment.marshal```为合适的路径，并利用贝叶斯分类器进行情感分析测试，
-测试结果保存到```result.csv```
+    修改```sentiment.marshal```为合适的路径，并利用贝叶斯分类器进行情感分析测试，
+    测试结果保存到```result.csv```
     
    
 ## Results | 部分结果展示
