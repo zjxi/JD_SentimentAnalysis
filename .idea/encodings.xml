@@ -2,6 +2,8 @@
 <project version="4">
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/comment_data.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/processed_comment_data.csv" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/result.csv" charset="GBK" />
     <file url="file://$PROJECT_DIR$/result.csv" charset="GBK" />
     <file url="file://$PROJECT_DIR$/商品评论数据.csv" charset="GBK" />
     <file url="file://$PROJECT_DIR$/商品评论数据2.csv" charset="GBK" />

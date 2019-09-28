@@ -3,6 +3,8 @@ import pandas as pd
 import snownlp
 import matplotlib.pyplot as plt
 from matplotlib.font_manager import FontProperties
+from word_cloud import word_cloud_creation, word_cloud_implementation, word_cloud_settings
+
 """
     Written by Zijun Xi
     Date: 2019/9/28
@@ -97,15 +99,23 @@ def data_virtualization():
     plt.xlabel('result')
     plt.ylabel('value')
     plt.title(u'商品评论情感分析结果-条形图', FontProperties=font)
-    plt.savefig('fig.png')
+    plt.savefig(f'./assets/fig.png')
     plt.show()
+
+
+def word_cloud_show():
+    '''将商品评论转为高频词汇的词云'''
+    wl = word_cloud_creation('processed_comment_data.csv')
+    wc = word_cloud_settings()
+    word_cloud_implementation(wl, wc)
 
 
 def main():
     processed_data('processed_comment_data')
-    # train()
+    # train()  # 训练正负向商品评论数据集
     test('processed_comment_data', 'result')
     data_virtualization()
+    word_cloud_show()
 
 
 if __name__ == '__main__':
