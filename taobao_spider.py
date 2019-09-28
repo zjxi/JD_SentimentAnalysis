@@ -4,7 +4,8 @@ import time
 import random
 import pandas as pd
 """
-    Written by Zijun Xi, 2019/9/27
+    Written by Zijun Xi
+    Date: 2019/9/27
 """
 
 
