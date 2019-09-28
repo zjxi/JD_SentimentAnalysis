@@ -27,12 +27,12 @@ $ cd Taobao_SentimentAnalysis
 
 ### 1. 利用snownlp
 
-找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
-![img](./assets/screenshot.png)
+- 找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
+- ![img](./assets/screenshot.png)
 
 ### 2. 构建简单分词和词性标注
 
-部分中文分词如下：
+- 部分中文分词如下：
 
 ```
 新/b 华/m 社/e 北/b 京/e １/b ２/m 月/e ３/b １/m 日/e 电/s 忠/b 诚/e 的/s 共/b 产/m 主/m 义/e 战/b 士/e ，/s 久/b 经/m 考/m 验/e 的/s 无/b 产/m 阶/m 级/e 革/b 命/m 家/e ，/s 我/b 党/e 党/b 务/e 工/b 作/e 和/s 统/b 一/m 战/m 线/e 工/b 作/e 的/s 杰/b 出/e 领/b 导/m 人/e ，/s 原/s 中/b 共/m 中/m 央/e 顾/b 问/e 委/b 员/m 会/e 常/b 务/e 委/b 员/m 会/e 委/b 员/e ，/s 中/b 国/e 人/b 民/e 政/b 治/e 协/b 商/e 会/b 议/e 第/b 四/e 、/s 五/s 、/s 六/s 届/s 全/b 国/e 委/b 员/m 会/e 副/s 主/b 席/e 刘/s 澜/b 涛/e 同/b 志/e ，/s 因/s 病/s 医/b 治/e 无/b 效/e ，/s 于/s １/b ９/m ９/m ７/m 年/e １/b ２/m 月/e ３/b １/m 日/e １/b ０/m 时/e ４/b ４/m 分/e 在/s 北/b 京/e 逝/b 世/e ，/s 终/b 年/e ８/b ８/e 岁/s 。/s
@@ -41,13 +41,13 @@ $ cd Taobao_SentimentAnalysis
 
 ### 3. 找到```neg.txt```和```pos.txt```分别为负正向情感数据集
 
-我们团队采用公开电商购物评论数据集，并进行训练，
-训练后的模型自动保存到```sentiment.marshal```
+- 我们团队采用公开电商购物评论数据集，并进行训练，
+  训练后的模型自动保存到```sentiment.marshal```
 
 ### 4. 修改并重构贝叶斯分类器
 
-修改```sentiment.marshal```为合适的路径，并利用贝叶斯分类器进行情感分析测试，
-测试结果保存到```result.csv```
+- 修改```sentiment.marshal```为合适的路径，并利用贝叶斯分类器进行情感分析测试，
+ 测试结果保存到```result.csv```
 
 ## Results | 部分结果展示
 
