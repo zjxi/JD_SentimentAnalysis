@@ -22,8 +22,9 @@ $ cd Taobao_SentimentAnalysis
 
 ## Details | 情感分析流程简析
 ### 1. 利用snownlp
-   找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
-   ![img](./assets/screenshot.png)
+找到下载完毕的```snownlp```位于```site-packages```的位置，如下图：
+![img](./assets/screenshot.png)
+
 ### 2. 构建简单分词和词性标注
     部分中文分词如下：
     ```
