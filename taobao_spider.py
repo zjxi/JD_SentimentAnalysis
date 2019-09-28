@@ -37,6 +37,7 @@ class Spider:
 
     @staticmethod
     def random_id_generator():
+        '''随机选取图书id'''
         ids = []
         while True:
             rand_id = random.randint(12000001, 12999999)
