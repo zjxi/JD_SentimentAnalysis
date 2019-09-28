@@ -1,5 +1,6 @@
 # 😼😽😻Taobao_SentimentAnalysis🤟
-
+![License](https://img.shields.io/github/license/ElecRex/Taobao_SentimentAnalysis.svg)
+![pythob](https://img.shields.io/badge/python-3.7-purple.svg)
 ## Introduction | 项目简介
 
 抓取淘宝商城随机选取的100部图书的每部书的10条商品评论，共1000条左右，
