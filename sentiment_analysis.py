@@ -75,7 +75,7 @@ def test(filename, to_filename):
             sent_dict = {
                 '情感分析结果': s.sentiments,
                 '评价倾向': res,
-                '商品评论': line
+                '商品评论': line.replace('\n', '')
             }
             sentiment_list.append(sent_dict)
             print(sent_dict)
@@ -111,11 +111,12 @@ def word_cloud_show():
 
 
 def main():
-    processed_data('processed_comment_data')
+    # processed_data('processed_comment_data')
     # train()  # 训练正负向商品评论数据集
     test('processed_comment_data', 'result')
-    data_virtualization()
-    word_cloud_show()
+
+    # data_virtualization()  # 数据可视化
+    # word_cloud_show()  # 高频词云
 
 
 if __name__ == '__main__':
