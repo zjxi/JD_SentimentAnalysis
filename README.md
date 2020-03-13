@@ -1,9 +1,9 @@
-# 😼😽😻Taobao_SentimentAnalysis🤟
+# 😼😽😻JD_SentimentAnalysis🤟
 ![License](https://img.shields.io/github/license/ElecRex/Taobao_SentimentAnalysis.svg)
 ![pythob](https://img.shields.io/badge/python-3.7-purple.svg)
 ## Introduction | 项目简介
 
-抓取淘宝商城随机选取的100部图书的每部书的10条商品评论，共1000条左右，
+抓取京东商城随机选取的100部图书的每部书的10条商品评论，共1000条左右，
 进行nlp情感分析和简单数据统计分析，并生成商品评论高频词汇词云。
 
 ## Download | 项目下载
